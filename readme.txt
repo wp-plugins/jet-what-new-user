@@ -34,6 +34,9 @@ ru: Для предложений, сообщений об ошибках исп
 
 == Changelog ==
 
+= 0.2 =
+Fixed any bug's
+
 = 0.1 =
 * First Release.
 
