@@ -1,4 +1,4 @@
-=== Jet Blog Meta List ===
+=== Jet What New User ===
 Contributors: Jettochkin
 Donate link: http://milordk.ru/uslugi.html
 Plugin link: http://milordk.ru/r-lichnoe/opyt-l/cms/jet-what-new-user.html
