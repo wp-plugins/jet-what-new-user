@@ -43,10 +43,10 @@ include('post-form.php');
 		?>
 		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'buddypress'); ?>
 		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo attribute_escape( stripslashes( $title ) ); ?>" /></label></p>
-				<p><? _e('Show','buddypress'); _e('Title:','buddypress'); ?></p>
-				<p><input class="checkbox" type="checkbox" <?php if ($jvavatar) {echo '"checked"';} ?> id="<? echo $this->get_field_id('jvtitle'); ?>" name="<? echo $this->get_field_name('jvtitle'); ?>" value="1" /></p>
-				<p><? _e('Show','buddypress'); _e('Avatar','buddypress'); ?></p>
-                <p><input class="checkbox" type="checkbox" <?php if ($jvavatar) {echo '"checked"';} ?> id="<? echo $this->get_field_id('jvavatar'); ?>" name="<? echo $this->get_field_name('jvavatar'); ?>" value="1" /></p>
+				<p><?php _e('Show','buddypress'); _e('Title:','buddypress'); ?></p>
+				<p><input class="checkbox" type="checkbox" <?php if ($jvavatar) {echo '"checked"';} ?> id="<?php echo $this->get_field_id('jvtitle'); ?>" name="<?php echo $this->get_field_name('jvtitle'); ?>" value="1" /></p>
+				<p><?php _e('Show','buddypress'); _e('Avatar','buddypress'); ?></p>
+                <p><input class="checkbox" type="checkbox" <?php if ($jvavatar) {echo '"checked"';} ?> id="<?php echo $this->get_field_id('jvavatar'); ?>" name="<?php echo $this->get_field_name('jvavatar'); ?>" value="1" /></p>
 	<?php
 	}
 }
