@@ -15,16 +15,17 @@ En: Widget for the publication of their status, placing a note in groups
 Ru: Виджет для публикации своего статуса, размещения заметки в группах
 
 == Installation ==
+EN
+- Upload `j-what-new-user.php` to the `/wp-content/plugins/` directory
+- Activate the plugin through the 'Plugins' menu in WordPress MU
+- Infuse field 
+- Use the widget to sidebar
 
-1. Upload `j-what-new-user.php` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress MU
-3. Infuse field 
-4. Use the widget to sidebar
-
-1. Загрузите `j-what-new-user.php` в директорию `/wp-content/plugins/`
-2. Активируйте плагин в меню `Плагины` Wordpress MU
-3. Установите параметры
-4. Используйте виджет в Сайдбаре
+RU
+- Загрузите `j-what-new-user.php` в директорию `/wp-content/plugins/`
+- Активируйте плагин в меню `Плагины` Wordpress MU
+- Установите параметры
+- Используйте виджет в Сайдбаре
 
 == Contact ==
 
