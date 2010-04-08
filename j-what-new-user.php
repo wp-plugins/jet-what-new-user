@@ -198,11 +198,6 @@ form#whats-new-form {
 		</div>
 
 		<div id="whats-new-options">
-			<div id="whats-new-submit">
-				<span class="ajax-loader"></span> &nbsp;
-				<input type="submit" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php _e( 'Post Update', 'buddypress' ) ?>" />
-			</div>
-
 			<?php if ( function_exists('bp_has_groups') && !bp_is_my_profile() && !bp_is_group() ) : ?>
 				<div id="whats-new-post-in-box">
 					<?php _e( 'Post in', 'buddypress' ) ?>:
@@ -222,7 +217,10 @@ form#whats-new-form {
 			<?php endif; ?>
 
 			<?php do_action( 'bp_activity_post_form_options' ) ?>
-
+			<div id="whats-new-submit">
+				<span class="ajax-loader"></span> &nbsp;
+				<input type="submit" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php _e( 'Post Update', 'buddypress' ) ?>" />
+			</div>
 		</div><!-- #whats-new-options -->
 	</div><!-- #whats-new-content -->
 
