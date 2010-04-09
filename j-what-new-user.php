@@ -233,9 +233,10 @@ form#whats-new-form {
 </form><!-- #whats-new-form -->
 <?
 /* End */
-			echo $after_widget;
-			}
-		}
+}
+}
+		echo $after_widget;	
+		
 	}
 
 	function update($new_instance, $old_instance) {
