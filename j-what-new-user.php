@@ -25,8 +25,8 @@ function widget($args, $instance) {
 		echo $before_widget;
 		$keyavatar = $instance['jvavatar'];
 		$keytitle = $instance['jvtitle'];
-if is_user_logged_in() {		
-if bp_is_active('activiry') {
+if (is_user_logged_in()) {		
+if (bp_is_active('activiry')) {
 	if ($keytitle)
 		{
 			echo $before_title . $instance['title'] . $after_title;
@@ -223,6 +223,7 @@ form#whats-new-form {
 				<span class="ajax-loader"></span> &nbsp;
 				<input type="submit" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php _e( 'Post Update', 'buddypress' ) ?>" />
 			</div>
+			<div><span style="font-size:60%"><a href="http://milordk.ru">powered by milordk</a></span></div>
 		</div><!-- #whats-new-options -->
 	</div><!-- #whats-new-content -->
 
