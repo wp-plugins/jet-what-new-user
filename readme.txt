@@ -3,7 +3,7 @@ Contributors: Jettochkin
 Donate link: http://milordk.ru/uslugi.html
 Plugin link: http://milordk.ru/r-lichnoe/opyt-l/cms/jet-what-new-user.html
 Tags: BuddyPress, Wordpress MU, meta, widget, activity
-Requires at least: WP MU 2.8.4a, BP 1.2.3
+Requires at least: WP MU 2.9, BP 1.2.3
 Tested up to: WP MU 2.9.2, BP 1.2.3
 Stable tag: trunk
 
@@ -44,6 +44,9 @@ en: For suggestions, bugs, hugs and love can be donated at the following locatio
 ru: Для предложений, сообщений об ошибках используйте [Plugin Page](http://milordk.ru/r-lichnoe/opyt-l/cms/jet-what-new-user.html)
 
 == Changelog ==
+
+= 0.3.1 =
+* The widget is not displayed for unregistered users and page activity
 
 = 0.3 =
 * Add select avatar/title show

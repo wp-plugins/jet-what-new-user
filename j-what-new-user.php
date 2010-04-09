@@ -8,7 +8,7 @@ Plugin URI: http://milordk.ru/r-lichnoe/opyt-l/cms/jet-what-new-user.html
 Donate URI: http://milordk.ru/uslugi.html
 Description: En: Widget for the publication of their status, placing a note in groups, Ru: Виджет для публикации своего статуса, размещения заметки в группах
 Tags: BuddyPress, Wordpress MU, meta, blog, could
-Version: 0.3
+Version: 0.3.1
 Site Wide Only: true
 */
 ?>
@@ -25,6 +25,8 @@ function widget($args, $instance) {
 		echo $before_widget;
 		$keyavatar = $instance['jvavatar'];
 		$keytitle = $instance['jvtitle'];
+if is_user_logged_in() {		
+if bp_is_active('activiry') {
 	if ($keytitle)
 		{
 			echo $before_title . $instance['title'] . $after_title;
@@ -205,7 +207,6 @@ form#whats-new-form {
 
 					<select id="whats-new-post-in" name="whats-new-post-in">
 						<option selected="selected" value="0"><?php _e( 'My Profile', 'buddypress' ) ?></option>
-
 						<?php if ( bp_has_groups( 'user_id=' . bp_loggedin_user_id() . '&type=alphabetical&max=100&per_page=100&populate_extras=0' ) ) : while ( bp_groups() ) : bp_the_group(); ?>
 							<option value="<?php bp_group_id() ?>"><?php bp_group_name() ?></option>
 						<?php endwhile; endif; ?>
@@ -232,6 +233,8 @@ form#whats-new-form {
 <?
 /* End */
 			echo $after_widget;
+			}
+		}
 	}
 
 	function update($new_instance, $old_instance) {
@@ -255,14 +258,14 @@ form#whats-new-form {
             echo 'Показывать заголовок:';
         }else{
                 _e('Show'); _e( ' ' );  _e('Title:','buddypress');
-        } ?></p>
-		<p><input class="checkbox" type="checkbox" <?php if ($jvtitle) {echo 'checked="checked"';} ?> id="<?php echo $this->get_field_id('jvtitle'); ?>" name="<?php echo $this->get_field_name('jvtitle'); ?>" value="1" /></p>
+        } ?>&nbsp;
+		<input class="checkbox" type="checkbox" <?php if ($jvtitle) {echo 'checked="checked"';} ?> id="<?php echo $this->get_field_id('jvtitle'); ?>" name="<?php echo $this->get_field_name('jvtitle'); ?>" value="1" /></p>
 <p><?php if ( WPLANG == 'ru_RU' ) { 
             echo 'Показывать аватар:';
         }else{
                 _e('Show'); _e( ' ' );  _e('Avatar','buddypress');
-        } ?></p>		
-		<p><input class="checkbox" type="checkbox" <?php if ($jvavatar) {echo 'checked="checked"';} ?> id="<?php echo $this->get_field_id('jvavatar'); ?>" name="<?php echo $this->get_field_name('jvavatar'); ?>" value="1" /></p>
+        } ?>&nbsp;		
+		<input class="checkbox" type="checkbox" <?php if ($jvavatar) {echo 'checked="checked"';} ?> id="<?php echo $this->get_field_id('jvavatar'); ?>" name="<?php echo $this->get_field_name('jvavatar'); ?>" value="1" /></p>
 	<?php
 	}
 }
