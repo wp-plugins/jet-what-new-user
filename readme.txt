@@ -45,6 +45,9 @@ ru: Для предложений, сообщений об ошибках исп
 
 == Changelog ==
 
+= 0.3.2.1 =
+* Update style
+
 = 0.3.2 =
 * The widget is not displayed for unregistered users and page activity
 
