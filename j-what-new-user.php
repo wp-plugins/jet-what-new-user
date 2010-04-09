@@ -8,7 +8,7 @@ Plugin URI: http://milordk.ru/r-lichnoe/opyt-l/cms/jet-what-new-user.html
 Donate URI: http://milordk.ru/uslugi.html
 Description: En: Widget for the publication of their status, placing a note in groups, Ru: Виджет для публикации своего статуса, размещения заметки в группах
 Tags: BuddyPress, Wordpress MU, meta, blog, could
-Version: 0.3.2.1
+Version: 0.3.3
 Site Wide Only: true
 */
 ?>
@@ -26,7 +26,7 @@ function widget($args, $instance) {
 		$keyavatar = $instance['jvavatar'];
 		$keytitle = $instance['jvtitle'];
 if (is_user_logged_in()) {		
-if (bp_is_active('activiry')) {
+if (!bp_is_page( BP_ACTIVITY_SLUG )) {
 	if ($keytitle)
 		{
 			echo $before_title . $instance['title'] . $after_title;

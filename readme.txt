@@ -44,6 +44,8 @@ en: For suggestions, bugs, hugs and love can be donated at the following locatio
 ru: Для предложений, сообщений об ошибках используйте [Plugin Page](http://milordk.ru/r-lichnoe/opyt-l/cms/jet-what-new-user.html)
 
 == Changelog ==
+= 0.3.3 =
+* final release for BP 1.2.3
 
 = 0.3.2.1 =
 * Update style
