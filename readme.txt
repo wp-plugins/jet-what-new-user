@@ -13,6 +13,7 @@ Widget for the publication of their status, placing a note in groups
 == Description ==
 
 En: Widget for the publication of their status, placing a note in groups
+
 Ru: Виджет для публикации своего статуса, размещения заметки в группах
 
 
@@ -44,6 +45,10 @@ en: For suggestions, bugs, hugs and love can be donated at the following locatio
 ru: Для предложений, сообщений об ошибках используйте [Plugin Page](http://milordk.ru/r-lichnoe/opyt-l/cms/jet-what-new-user.html)
 
 == Changelog ==
+
+= 0.4 =
+* The widget is not displayed on the pages of the activity and user profiles
+
 = 0.3.3 =
 * final release for BP 1.2.3
 

@@ -8,7 +8,7 @@ Plugin URI: http://milordk.ru/r-lichnoe/opyt-l/cms/jet-what-new-user.html
 Donate URI: http://milordk.ru/uslugi.html
 Description: En: Widget for the publication of their status, placing a note in groups, Ru: Виджет для публикации своего статуса, размещения заметки в группах
 Tags: BuddyPress, Wordpress MU, meta, blog, could
-Version: 0.3.3
+Version: 0.4
 Site Wide Only: true
 */
 ?>
@@ -19,14 +19,18 @@ class JetWhatnewf extends WP_Widget {
 		parent::WP_Widget(false, $name = __('JetWhatnewf','JetWhatnewf') );
 	}
 
-
 function widget($args, $instance) {
 		extract( $args );
 		echo $before_widget;
 		$keyavatar = $instance['jvavatar'];
 		$keytitle = $instance['jvtitle'];
+/* Check pages */
+$cpages .= $_SERVER["REQUEST_URI"];
+$cvar = strpos ($cpages, "members");
+/* ---- */
 if (is_user_logged_in()) {		
 if (!bp_is_page( BP_ACTIVITY_SLUG )) {
+if ($cvar == 0 ) {
 	if ($keytitle)
 		{
 			echo $before_title . $instance['title'] . $after_title;
@@ -43,28 +47,25 @@ if (!bp_is_page( BP_ACTIVITY_SLUG )) {
 		<? echo $after_title; 
 		}
 		
-
 /* Start */ ?>
 <? /* With Avatar */ ?>
 <? if ($keyavatar) { ?>
   <style type="text/css">
-form#whats-new-form {
+form#whats-new-form-jwidget {
 	margin-bottom: 5px;
 	border-bottom: 1px solid #f0f0f0;
 	overflow: hidden;
 	padding-bottom: 20px;
 }
-	#item-body form#whats-new-form {
+	#item-body form#whats-new-form-jwidget {
 		margin-top: 20px;
 		border: none;
 	}
-
-	.home-page form#whats-new-form {
+	.home-page form#whats-new-form-jwidget {
 		border-bottom: none;
 		padding-bottom: 0;
 	}
-
-	form#whats-new-form h5 {
+	form#whats-new-form-jwidget h5 {
 		margin: 0;
 		font-weight: normal;
 		font-size: 12px;
@@ -72,17 +73,14 @@ form#whats-new-form {
 		margin-left: 76px;
 		padding: 0 0 3px 0;
 	}
-
-	form#whats-new-form #whats-new-avatar {
+	form#whats-new-form-jwidget #whats-new-avatar {
 		float: left;
 	}
-
-	form#whats-new-form #whats-new-content {
+	form#whats-new-form-jwidget #whats-new-content {
 		margin-left: 54px;
 		padding-left: 22px;
 	}
-
-	form#whats-new-form #whats-new-textarea {
+	form#whats-new-form-jwidget #whats-new-textarea {
 		padding: 8px;
 		border: 1px inset #ccc;
 		background: #fff;
@@ -91,7 +89,7 @@ form#whats-new-form {
 		-webkit-border-radius: 3px;
 		border-radius: 3px;
 	}
-	form#whats-new-form textarea {
+	form#whats-new-form-jwidget textarea {
 		width: 100%;
 		height: 60px;
 		font-size: 14px;
@@ -101,12 +99,10 @@ form#whats-new-form {
 		margin: 0;
 		padding: 0;
 	}
-
-	form#whats-new-form #whats-new-options select {
+	form#whats-new-form-jwidget #whats-new-options select {
 		max-width: 200px;
 	}
-
-	form#whats-new-form #whats-new-submit {
+	form#whats-new-form-jwidget #whats-new-submit {
 		float: left;
 		margin: 0;
 	}
@@ -115,23 +111,21 @@ form#whats-new-form {
 <? } else { ?>
 <? /* Without Avatar */ ?>
   <style type="text/css">
-form#whats-new-form {
+form#whats-new-form-jwidget {
 	margin-bottom: 5px;
 	border-bottom: 1px solid #f0f0f0;
 	overflow: hidden;
 	padding-bottom: 20px;
 }
-	#item-body form#whats-new-form {
+	#item-body form#whats-new-form-jwidget {
 		margin-top: 20px;
 		border: none;
 	}
-
-	.home-page form#whats-new-form {
+	.home-page form#whats-new-form-jwidget {
 		border-bottom: none;
 		padding-bottom: 0;
 	}
-
-	form#whats-new-form h5 {
+	form#whats-new-form-jwidget h5 {
 		margin: 0;
 		font-weight: normal;
 		font-size: 12px;
@@ -139,13 +133,11 @@ form#whats-new-form {
 		margin-left: 76px;
 		padding: 0 0 3px 0;
 	}
-
-	form#whats-new-form #whats-new-content {
+	form#whats-new-form-jwidget #whats-new-content {
 		margin-left: 5px;
 		padding-left: 5px;
 	}
-
-	form#whats-new-form #whats-new-textarea {
+	form#whats-new-form-jwidget #whats-new-textarea {
 		padding: 8px;
 		border: 1px inset #ccc;
 		background: #fff;
@@ -154,7 +146,7 @@ form#whats-new-form {
 		-webkit-border-radius: 3px;
 		border-radius: 3px;
 	}
-	form#whats-new-form textarea {
+	form#whats-new-form-jwidget textarea {
 		width: 100%;
 		height: 60px;
 		font-size: 14px;
@@ -165,19 +157,17 @@ form#whats-new-form {
 		padding: 0;
 	}
 
-	form#whats-new-form #whats-new-options select {
+	form#whats-new-form-jwidget #whats-new-options select {
 		max-width: 200px;
 	}
-
-	form#whats-new-form #whats-new-submit {
-<? /*		align: left;*/?>
+	form#whats-new-form-jwidget #whats-new-submit {
 		margin: 0;
 	}
   </style>
 <? /* Without Avatar */ ?>
 <? } ?>
 
-<form action="<?php bp_activity_post_form_action() ?>" method="post" id="whats-new-form" name="whats-new-form">
+<form action="<?php bp_activity_post_form_action() ?>" method="post" id="whats-new-form-jwidget" name="whats-new-form-jwidget">
 
 	<?php do_action( 'bp_before_activity_post_form' ) ?>
 
@@ -230,9 +220,10 @@ form#whats-new-form {
 	<?php wp_nonce_field( 'post_update', '_wpnonce_post_update' ); ?>
 	<?php do_action( 'bp_after_activity_post_form' ) ?>
 
-</form><!-- #whats-new-form -->
+</form><!-- #whats-new-form-jwidget -->
 <?
 /* End */
+}
 }
 }
 		echo $after_widget;	
