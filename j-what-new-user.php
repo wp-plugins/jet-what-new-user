@@ -221,7 +221,7 @@ form#whats-new-form-jwidget {
 	<?php do_action( 'bp_after_activity_post_form' ) ?>
 
 </form><!-- #whats-new-form-jwidget -->
-<?
+<?php
 /* End */
 }
 }
@@ -261,6 +261,6 @@ form#whats-new-form-jwidget {
 		<input class="checkbox" type="checkbox" <?php if ($jvavatar) {echo 'checked="checked"';} ?> id="<?php echo $this->get_field_id('jvavatar'); ?>" name="<?php echo $this->get_field_name('jvavatar'); ?>" value="1" /></p>
 	<?php
 	}
-}
+
 add_action('widgets_init', create_function('', 'return register_widget("JetWhatnewf");'));
 ?>
