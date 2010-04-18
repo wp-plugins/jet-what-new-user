@@ -46,6 +46,9 @@ ru: Для предложений, сообщений об ошибках исп
 
 == Changelog ==
 
+= 1.0 =
+* Correction code, style and localization
+
 = 0.4 =
 * The widget is not displayed on the pages of the activity and user profiles
 

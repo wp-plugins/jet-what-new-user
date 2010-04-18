@@ -8,15 +8,15 @@ Plugin URI: http://milordk.ru/r-lichnoe/opyt-l/cms/jet-what-new-user.html
 Donate URI: http://milordk.ru/uslugi.html
 Description: En: Widget for the publication of their status, placing a note in groups, Ru: Виджет для публикации своего статуса, размещения заметки в группах
 Tags: BuddyPress, Wordpress MU, meta, blog, could
-Version: 0.4
+Version: 1.0
 Site Wide Only: true
 */
 ?>
-<?
+<?php
 
 class JetWhatnewf extends WP_Widget {
 	function JetWhatnewf() {
-		parent::WP_Widget(false, $name = __('JetWhatnewf','JetWhatnewf') );
+		parent::WP_Widget(false, $name = __('Jet What New','JetWhatnewf') );
 	}
 
 function widget($args, $instance) {
@@ -44,12 +44,12 @@ if ($cvar == 0 ) {
 			<?php else : ?>
 			    <?php printf( __( "What's new %s?", 'buddypress' ), bp_get_user_firstname() ) ?>
 			<?php endif; ?>
-		<? echo $after_title; 
+		<?php echo $after_title; 
 		}
 		
 /* Start */ ?>
-<? /* With Avatar */ ?>
-<? if ($keyavatar) { ?>
+<?php /* With Avatar */ ?>
+<?php if ($keyavatar) { ?>
   <style type="text/css">
 form#whats-new-form-jwidget {
 	margin-bottom: 5px;
@@ -107,9 +107,9 @@ form#whats-new-form-jwidget {
 		margin: 0;
 	}
   </style>
-<? /* With Avatar */ ?>
-<? } else { ?>
-<? /* Without Avatar */ ?>
+<?php /* With Avatar */ ?>
+<?php } else { ?>
+<?php /* Without Avatar */ ?>
   <style type="text/css">
 form#whats-new-form-jwidget {
 	margin-bottom: 5px;
@@ -164,8 +164,8 @@ form#whats-new-form-jwidget {
 		margin: 0;
 	}
   </style>
-<? /* Without Avatar */ ?>
-<? } ?>
+<?php /* Without Avatar */ ?>
+<?php } ?>
 
 <form action="<?php bp_activity_post_form_action() ?>" method="post" id="whats-new-form-jwidget" name="whats-new-form-jwidget">
 
@@ -183,7 +183,7 @@ form#whats-new-form-jwidget {
 			<?php bp_loggedin_user_avatar( 'width=60&height=60' ) ?>
 		</a>
 	</div>
-<? } ?>
+<?php } ?>
 
 	<div id="whats-new-content">
 		<div id="whats-new-textarea">
@@ -193,7 +193,7 @@ form#whats-new-form-jwidget {
 		<div id="whats-new-options">
 			<?php if ( function_exists('bp_has_groups') && !bp_is_my_profile() && !bp_is_group() ) : ?>
 				<div id="whats-new-post-in-box">
-					<?php _e( 'Post in', 'buddypress' ) ?>:
+					<?php _e( 'Post in', 'buddypress' ) ?>: <br />
 
 					<select id="whats-new-post-in" name="whats-new-post-in">
 						<option selected="selected" value="0"><?php _e( 'My Profile', 'buddypress' ) ?></option>
@@ -213,7 +213,7 @@ form#whats-new-form-jwidget {
 				<span class="ajax-loader"></span> &nbsp;
 				<input type="submit" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php _e( 'Post Update', 'buddypress' ) ?>" />
 			</div>
-			<div><span style="font-size:60%"><a href="http://milordk.ru">powered by milordk</a></span></div>
+			<p align="right"><span style="font-size:60%"><a href="http://milordk.ru">powered by milordk</a></span></p>
 		</div><!-- #whats-new-options -->
 	</div><!-- #whats-new-content -->
 
