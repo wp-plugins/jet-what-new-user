@@ -4,7 +4,7 @@ Donate link: http://milordk.ru/uslugi.html
 Plugin link: http://milordk.ru/r-lichnoe/opyt-l/cms/jet-what-new-user.html
 Tags: BuddyPress, Wordpress MU, meta, widget, activity
 Requires at least: WP MU 2.9, BP 1.2.3
-Tested up to: WP MU 2.9.2, BP 1.2.3
+Tested up to: WP MU 2.9.2, BP 1.2.4.1
 Stable tag: trunk
 
 Widget for the publication of their status, placing a note in groups 
